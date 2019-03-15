@@ -1,0 +1,14 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/golang:1.12
+    steps:
+      - checkout
+      - run:
+          name: install-protobuf
+          command: sudo apt install -y protobuf-compiler && go get -d -u github.com/golang/protobuf/protoc-gen-go && go install github.com/golang/protobuf/protoc-gen-go
+      - run:
+          name: install-mockery
+          command: GO111MODULE=off go get github.com/vektra/mockery/.../
+      - run: make

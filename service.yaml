@@ -1,0 +1,16 @@
+apiVersion: serving.knative.dev/v1alpha1
+kind: Service
+metadata:
+  name: streaming-adapter
+  namespace: default
+spec:
+  runLatest:
+    configuration:
+      revisionTemplate:
+        spec:
+          container:
+            image: github.com/fbiville/streaming-adapter
+            env:
+              - name: HTTP_PORT
+                value: 8080
+              - name: GRPC_ENDPOINT_ADDRESS
