@@ -1,0 +1,12 @@
+= riff streaming adapter
+
+== Build
+
+image:https://circleci.com/gh/fbiville/streaming-adapter/tree/master.svg?style=svg["CircleCI", link="https://circleci.com/gh/fbiville/streaming-adapter/tree/master"]
+
+== About
+
+riff streaming adapter (RSA) adapts incoming HTTP requests, by:
+
+ 1. unpacking the HTTP request and splitting it into several riff-specific gRPC frames
+ 2. getting the gRPC response and converting it back to an HTTP response
