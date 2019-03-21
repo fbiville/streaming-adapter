@@ -1,9 +1,10 @@
 syntax = "proto3";
 
-package streaming_proto;
+package streaming;
 
 service Riff {
-    rpc Invoke(stream Signal) returns (stream Signal) {}
+    rpc Invoke (stream Signal) returns (stream Signal) {
+    }
 }
 
 message Start {
